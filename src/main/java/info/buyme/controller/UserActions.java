@@ -7,14 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/user")
-public class UserForms {
-	private static final Logger logger = LoggerFactory.getLogger(UserForms.class);
-
-	@RequestMapping("/new")
-	public ModelAndView showNewUserForm() {
+public class UserActions {
+	private static final Logger logger = LoggerFactory.getLogger(UserActions.class);
+	
+	@RequestMapping("/user/add")
+	public ModelAndView addNerUser() {
+		//TODO: akcja do wykonania przy dodawaniu nowego usera
 		return new ModelAndView("newUserForm");
 	}
-	
-
 }

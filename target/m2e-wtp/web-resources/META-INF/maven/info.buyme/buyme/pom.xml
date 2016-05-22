@@ -32,6 +32,8 @@
 		<!-- jpa | hibernate properties -->
 		<spring-data-jpa-version>1.10.1.RELEASE</spring-data-jpa-version>
 		<hibernate-jpa-2.0-api-version>1.0.1.Final</hibernate-jpa-2.0-api-version>
+		<!-- JSR 303 Validator -->
+		<hibernate-validator-version>5.2.4.Final</hibernate-validator-version>
 
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
@@ -111,6 +113,11 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>${spring-data-jpa-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator-version}</version>
 		</dependency>
 
 	</dependencies>

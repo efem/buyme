@@ -39,8 +39,8 @@ public class PersistenceJPAConfig {
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/buyme");
 
-		dataSource.setUsername("root");
-		dataSource.setPassword("admin");
+		dataSource.setUsername("buyme");
+		dataSource.setPassword("buyme");
 		return dataSource;
 	}
 
@@ -59,7 +59,7 @@ public class PersistenceJPAConfig {
 
 	Properties additionalProperties() {
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+		properties.setProperty("hibernate.hbm2ddl.auto", "create");
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		return properties;
 	}

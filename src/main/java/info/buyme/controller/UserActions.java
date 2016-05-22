@@ -15,4 +15,10 @@ public class UserActions {
 		//TODO: akcja do wykonania przy dodawaniu nowego usera
 		return new ModelAndView("newUserForm");
 	}
+	
+	@RequestMapping("/user/del")
+	public ModelAndView deleteUser() {
+		//TODO: akcja do wykonania przy dodawaniu nowego usera
+		return new ModelAndView("deleteUserForm");
+	}
 }

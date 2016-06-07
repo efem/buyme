@@ -8,7 +8,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
@@ -17,21 +16,21 @@ import org.springframework.format.annotation.NumberFormat;
 public class OneList {
 	@Id
 	@GeneratedValue
-	public Long id;
+	private Long id;
 	
-	@NotEmpty
-	public String name;
+
+	private String name;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.java.u)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public String createDate;
+	private String createDate;
 	
-	@Temporal(TemporalType.DATE)
+	//@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public String modificationDate;
+	private String modificationDate;
 	
 	@NumberFormat
-	public byte isDeleted;
+	private byte isDeleted;
 
 	@ManyToOne
 	@JoinColumn(name = "author_id")

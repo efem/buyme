@@ -1,45 +1,55 @@
 package info.buyme.domain;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import info.buyme.controller.ShowForm;
 
 
 @Entity
+@Table(name="AUTOR")
 public class Author {
+
+	private static final Logger logger = LoggerFactory.getLogger(Author.class);
+	
 	@Id
 	@GeneratedValue
-	public Long id;
-	
-	@NotEmpty
-	public String email;
-	
-	@NotEmpty
-	public String name;
+	private Long id;
+
+
+	private String email;
+
+
+	private String name;
 
 	@OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
 	private List<OneList> oneLists;
-	
+
 	public Author() {
-		
+
 	}
-	
+
 	public Author(Long id, String email, String name) {
 		this.id = id;
 		this.email = email;
 		this.name = name;
 	}
-	
+
 	public List<OneList> getOneLists() {
 		return oneLists;
 	}
-	
-	
+
 	public Long getId() {
 		return id;
 	}
